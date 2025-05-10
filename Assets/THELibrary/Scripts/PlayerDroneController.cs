@@ -14,9 +14,12 @@ public class PlayerDroneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(player)
+        {
+        transform.position = player.position;
+        }
         mouseX = Input.mousePositionDelta.x;
         mouseY = Input.mousePositionDelta.y;
-        transform.position = player.position;
         transform.eulerAngles += new Vector3(-mouseY/2, mouseX/2, 0);
     }
 }
